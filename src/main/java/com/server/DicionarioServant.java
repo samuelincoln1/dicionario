@@ -60,7 +60,7 @@ public class DicionarioServant extends UnicastRemoteObject implements Dicionario
         }
     }
 
-    // Atualiza o arquivo dicionario.json com os dados no HashMap da memória
+    // Atualiza o arquivo dicionario.json com os dados do HashMap na memória
     public void atualizarDicionario() {
         Gson gson = new Gson();
         String json = gson.toJson(dicionario);
