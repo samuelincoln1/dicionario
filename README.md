@@ -12,7 +12,7 @@ No server, estão os arquivos:
 - Dicionario.java - interface que define o comportamento de um dicionário
 - DicionarioException - Exeções que podem ser lançadas por um dicionário
 - DicionarioServant - Classe que implementa a interface Dicionario e sobrescreve seus métodos
-- Server.java - Servidor iniciado ma porta 1099
+- Server.java - Servidor iniciado na porta 1099
 
 No client, está o arquivo:
 - DicionarioClient.java - Possui uma interface gráfica e permite que o usuário pesquise pelo significado de uma palavra, adicione palavras e remova palavras do dicionário
