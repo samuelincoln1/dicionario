@@ -36,6 +36,7 @@ public class DIcionarioClient {
                     JOptionPane.showMessageDialog(frame, "Significado: " + resultado);
                 } catch (Exception err) {
                     JOptionPane.showMessageDialog(frame, "Erro: " + err.getMessage());
+                    err.printStackTrace();
                 }
             } else {
                 JOptionPane.showMessageDialog(frame, "Insira uma palavra válida");
@@ -51,6 +52,7 @@ public class DIcionarioClient {
                     JOptionPane.showMessageDialog(frame, "Palavra adicionada com sucesso");
                 } catch (Exception err) {
                     JOptionPane.showMessageDialog(frame, "Erro: " + err.getMessage());
+                    err.printStackTrace();
                 }
             } else {
                 JOptionPane.showMessageDialog(frame, "Insira uma palavra válida");
@@ -66,6 +68,7 @@ public class DIcionarioClient {
                     JOptionPane.showMessageDialog(frame, "Palavra removida com sucesso");
                 } catch (Exception err) {
                     JOptionPane.showMessageDialog(frame, "Erro: " + err.getMessage());
+                    err.printStackTrace();
                 }
             } else {
                 JOptionPane.showMessageDialog(frame, "Insira uma palavra válida");
@@ -93,7 +96,7 @@ public class DIcionarioClient {
             menuInicial(dicionario); // Mostra o menu da aplicação
 
         } catch (Exception e) { // Caso ocorra algum erro na conexão, mostra uma mensagem de erro
-            System.err.println("Erro: " + e.toString());
+            e.printStackTrace();
             menuErro("Ocorreu um erro ao se conectar com o servidor!");
             
             
