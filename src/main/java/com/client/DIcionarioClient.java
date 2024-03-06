@@ -10,11 +10,15 @@ public class DIcionarioClient {
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 1099);
             Dicionario dicionario = (Dicionario) registry.lookup("DicionarioRemote");
-            dicionario.adicionarPalavra("teste", "significado teste");
-            System.out.println(dicionario.consultarSignificado("teste"));
+            System.out.println("Conectado ao servidor");
+            // dicionario.adicionarPalavra("teste", "significado teste");
+            // dicionario.adicionarPalavra("teste", "significado teste2");
+            // System.out.println(dicionario.consultarSignificado("naoexisto"));
+            // System.out.println(dicionario.consultarSignificado("gato"));
+            // dicionario.removerPalavra("falar");
+            
         } catch (Exception e) {
-            System.err.println("Client exception: " + e.toString());
-            e.printStackTrace();
+            System.err.println("Erro: " + e.toString());
         }
     }
 }
