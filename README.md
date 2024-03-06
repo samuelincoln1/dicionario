@@ -7,6 +7,7 @@ Sistema de dicionário utilizando arquitetura cliente-servidor feito em Java
 
 ## Explicação do código
 Existem dois pacotes: client e server
+
 No server, estão os arquivos:
 - Dicionario.java - interface que define o comportamento de um dicionário
 - DicionarioException - Exeções que podem ser lançadas por um dicionário
