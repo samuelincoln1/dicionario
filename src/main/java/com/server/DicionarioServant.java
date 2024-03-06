@@ -10,8 +10,8 @@ import java.util.Map;
 import com.google.gson.Gson;
 
 public class DicionarioServant extends UnicastRemoteObject implements Dicionario{
-    // Map do tipo String:Object
-    Map<String, Object> dicionario;
+    // Map do tipo String:String
+    Map<String, String> dicionario;
     // Remover warning desnecessário
     @SuppressWarnings("unchecked")
     // Utilizando a classe Gson, este construtor lê o arquivo dicionario.json e o transforma em um HashMap na memória
