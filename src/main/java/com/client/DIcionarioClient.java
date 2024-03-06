@@ -91,10 +91,9 @@ public class DIcionarioClient {
     public static void main(String[] args) {
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 1099); // Pega referência para um registro rmi no localhost e na porta 1099
-            Dicionario dicionario = (Dicionario) registry.lookup("DicionarioRemote"); // Localiza o objeto registrado com o nome "DicionarioRemote", que é uma implementacao de Dicionario e salva no objeto dicionario
+            Dicionario dicionario = (Dicionario) registry.lookup("DicionarioRemote"); // Localiza o objeto do tipo Remote registrado com o nome "DicionarioRemote", que é uma implementacao de Dicionario e salva no objeto dicionario do tipo Dicionario
             System.out.println("Conectado ao servidor");
             menuInicial(dicionario); // Mostra o menu da aplicação
-
         } catch (Exception e) { // Caso ocorra algum erro na conexão, mostra uma mensagem de erro
             e.printStackTrace();
             menuErro("Ocorreu um erro ao se conectar com o servidor!");
