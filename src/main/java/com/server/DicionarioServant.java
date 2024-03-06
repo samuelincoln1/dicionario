@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.Gson;
 
-public class DicionarioServant extends UnicastRemoteObject implements DicionarioInterface{
+public class DicionarioServant extends UnicastRemoteObject implements Dicionario{
     
     Map<String, Object> dicionario;
 
