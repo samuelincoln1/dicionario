@@ -7,7 +7,7 @@ public class Server {
         try {
             Dicionario dicionario = new DicionarioServant(); // Instancia classe DicionarioServant que implementa Dicionario
             Registry registry = LocateRegistry.createRegistry(1099); // Cria um registro RMI na porta 1099
-            registry.rebind("DicionarioRemote", dicionario); // Associa o dicionario instanciado com o nome DicionarioRemote
+            registry.rebind("DicionarioRemote", dicionario); // Associa o dicionario instanciado com o nome DicionarioRemote, para ser acessado remotamente
             System.out.println("Servidor online");
         } catch (Exception e) {
             System.err.println("Server exception: " + e.toString());
