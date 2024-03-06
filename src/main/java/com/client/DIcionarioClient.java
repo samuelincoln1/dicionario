@@ -7,7 +7,7 @@ import javax.swing.*;
 import com.server.Dicionario;
 
 public class DIcionarioClient {
-
+    // Menu com as opcoes de consultar uma palavra, adicionar e remover
     public static void menuInicial(Dicionario dicionario) {
         JFrame frame = new JFrame("Dicionário");
         frame.setSize(400, 200);
@@ -87,12 +87,12 @@ public class DIcionarioClient {
     }
     public static void main(String[] args) {
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
-            Dicionario dicionario = (Dicionario) registry.lookup("DicionarioRemote");
+            Registry registry = LocateRegistry.getRegistry("localhost", 1099); // Pega referência para um registro rmi no localhost e na porta 1099
+            Dicionario dicionario = (Dicionario) registry.lookup("DicionarioRemote"); // Localiza o objeto registrado com o nome "DicionarioRemote", que é uma implementacao de Dicionario e salva no objeto dicionario
             System.out.println("Conectado ao servidor");
-            menuInicial(dicionario);
+            menuInicial(dicionario); // Mostra o menu da aplicação
 
-        } catch (Exception e) {
+        } catch (Exception e) { // Caso ocorra algum erro na conexão, mostra uma mensagem de erro
             System.err.println("Erro: " + e.toString());
             menuErro("Ocorreu um erro ao se conectar com o servidor!");
             

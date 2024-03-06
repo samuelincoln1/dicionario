@@ -10,10 +10,11 @@ import java.util.Map;
 import com.google.gson.Gson;
 
 public class DicionarioServant extends UnicastRemoteObject implements Dicionario{
-    
+    // Map do tipo String:Object
     Map<String, Object> dicionario;
-
+    // Remover warning desnecessário
     @SuppressWarnings("unchecked")
+    // Utilizando a classe Gson, este construtor lê o arquivo dicionario.json e o transforma em um HashMap na memória
     public DicionarioServant() throws RemoteException {
         super();
         Gson gson = new Gson();
@@ -24,6 +25,7 @@ public class DicionarioServant extends UnicastRemoteObject implements Dicionario
         }
     }
     
+    // Consulta uma palavra no dicionário. Se a palavra existir, retorna o significado dela. Se não existir, lança a execeção DicionarioException
     @Override
     public String consultarSignificado(String palavra) throws RemoteException, DicionarioException {
         if (dicionario.get(palavra) != null) {
@@ -34,6 +36,7 @@ public class DicionarioServant extends UnicastRemoteObject implements Dicionario
    
     }
 
+    // Adiciona uma palavra no dicionário. Se a palavra já estiver adicionada, lança a execeção DicionarioException. Caso contrário, adiciona a palavra e o significado no HashMap e salva no arquivo Json
     @Override
     public void adicionarPalavra(String palavra, String significado) throws RemoteException, DicionarioException {
         if (dicionario.get(palavra) != null) {
@@ -45,6 +48,7 @@ public class DicionarioServant extends UnicastRemoteObject implements Dicionario
         }
     }
 
+    // Remove uma palavra do dicionário. Se a palavra não existir, lança a execeção DicionarioException. Caso contrário, remove a palavra do HashMap e do arquivo Json
     @Override
     public void removerPalavra(String palavra) throws RemoteException, DicionarioException{
         if (dicionario.get(palavra) != null) {
@@ -56,6 +60,7 @@ public class DicionarioServant extends UnicastRemoteObject implements Dicionario
         }
     }
 
+    // Atualiza o arquivo dicionario.json com os dados no HashMap da memória
     public void atualizarDicionario() {
         Gson gson = new Gson();
         String json = gson.toJson(dicionario);
